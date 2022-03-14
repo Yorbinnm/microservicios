@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "e83829a4-50a5-4829-8614-b5d6f281111c",
+		"name": "noticias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"titulo\": \"titulo de la noticias\",\n        \"mensaje\": \"mensaje de prueba\"\n }\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/noticias/v1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"noticias",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PublicacionByid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/publicacion/v1/e252c777-46a5-4357-839a-ce4b9bac9e75",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"publicacion",
+						"v1",
+						"e252c777-46a5-4357-839a-ce4b9bac9e75"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editarnoticia",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"titulo\": \"titulo de la noticia\",\n        \"mensaje\": \"mensaje de prueba texto\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/noticias/v1/fbe298bc-d295-44bc-a8a5-a642dfb646fb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"noticias",
+						"v1",
+						"fbe298bc-d295-44bc-a8a5-a642dfb646fb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
