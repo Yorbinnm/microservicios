@@ -1,0 +1,9 @@
+package com.examen.usuarios.models.service;
+
+import com.examen.usuarios.entity.Usuario;
+
+public interface UsuarioService {
+	Usuario guargarProducto(Usuario nuevo_producto);
+	Usuario consultarProducto(int id);
+	Usuario eliminarProducto(int id);
+}

@@ -1,0 +1,15 @@
+package com.examen.usuarios.models.remote;
+
+import org.springframework.stereotype.Component;
+
+
+@Component
+public class AutorizacionesServiceClientFallback implements AdministracionSegurosServiceRemote {
+
+	@Override
+	public AutorizacionesResumenDto solicitaAutorizacion(SegurosDto datosSeguro) {
+		// TODO Auto-generated method stub
+		return new AutorizacionesResumenDto();
+	}
+
+}

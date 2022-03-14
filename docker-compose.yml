@@ -1,0 +1,49 @@
+version: '3.3'
+services:
+  database-service:
+      build: database-service
+      environment:
+        - POSTGRES_PASSWORD=secret
+      ports:
+        - 5432:5432
+      volumes:
+        - ./blockstorage/postgres:/var/lib/postgresql/data
+  usuarios:
+    image: ynunez/usuarios:0.0.1-snapshot
+    ports:
+        - 8081:8081
+    depends_on:
+      - database-service
+  publicaciones:
+    image: ynunez/publicaciones:0.0.1-snapshot
+    ports:
+        - 8082:8082
+    depends_on:
+      - database-service
+  discovery-server:
+    image: ynunez/discovery-server:0.0.1-snapshot
+    ports:
+        - 8761:8761
+    depends_on:
+      - database-service
+  comentarios:
+    image: ynunez/comentarios:0.0.1-snapshot
+    ports:
+        - 8083:8083
+    depends_on:
+      - database-service
+  mensajes:
+    image: ynunez/mensajes:0.0.1-snapshot
+    ports:
+        - 8084:8084
+    depends_on:
+      - database-service
+  noticias:
+    image: ynunez/noticias:0.0.1-snapshot
+    ports:
+        - 8085:8085
+    depends_on:
+      - database-service
+ 
+ 
+ 

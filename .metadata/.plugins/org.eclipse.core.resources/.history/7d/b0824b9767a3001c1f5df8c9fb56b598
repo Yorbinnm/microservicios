@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: admin
+    url:  jdbc:postgresql://database-service:5432/red_social
+  application:
+    name: publicaciones
+
+server:
+  port: 8083
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true #registra ip no hostname
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    metadata-map:
+      instanceId: ${instance.id}

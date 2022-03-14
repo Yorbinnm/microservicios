@@ -1,0 +1,54 @@
+package com.examen.comentarios.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.comentarios.entity.Comentario;
+import com.examen.comentarios.models.ComentarioDto;
+import com.examen.publicaciones.repository.PublicacionesRepository;
+
+
+
+
+@Service
+@Transactional
+public class ServiceComentariosImpl implements ServiceComentario {
+
+	private PublicacionesRepository publicacionrepos;
+	@Override
+	public Comentario guardar(ComentarioDto Datos) {
+		Comentario Publicacion = Comentario.from(Datos);
+		return publicacionrepos.save(Publicacion);
+	}
+
+	@Override
+	public Comentario consultar(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Comentario> publicaciones_usuario(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void remover(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	
+
+
+		
+
+
+	
+
+}

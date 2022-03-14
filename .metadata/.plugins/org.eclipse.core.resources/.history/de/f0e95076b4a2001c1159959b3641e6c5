@@ -1,0 +1,31 @@
+package com.examen.usuarios.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.examen.usuarios.entity.Usuario;
+import com.examen.usuarios.models.service.UsuarioServiceImpl;
+
+@RestController
+@RequestMapping("usuarios/v1")
+public class UsuariosController {
+	@Autowired
+	private UsuarioServiceImpl usuarioImpl;
+	
+    @GetMapping()
+	public List<Usuario> listaUsuarios() {
+		return usuarioImpl.obtenerTodo();
+	}
+    
+	@GetMapping("/{id}")
+	public Srting consultarById(@PathVariable("id") String id) {
+			return usuarioImpl.consultar(id);
+	}
+
+
+}

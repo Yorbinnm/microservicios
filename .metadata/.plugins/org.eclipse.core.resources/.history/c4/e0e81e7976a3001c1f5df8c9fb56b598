@@ -1,0 +1,69 @@
+package com.examen.mensajes.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.comentarios.entity.Comentario;
+import com.examen.comentarios.models.ComentarioDto;
+import com.examen.comentarios.repository.ComentarioRepository;
+
+
+
+
+@Service
+@Transactional
+public class ServiceMensajesmpl implements ServiceComentario {
+
+
+
+	private MensajeRepository comentarioRepository;
+	public ServiceMensajesmpl(MensajeRepository comentarioRepository) {
+		this.comentarioRepository = comentarioRepository;
+	}
+	@Override
+	public Mensaje modificar(String id, MensajeDto comentarioDto) {
+		Mensaje coment = comentarioRepository.findById(id)
+				.orElseThrow(() -> PublicacionNoEncontradaException.from("No se encontro el usuario", id));
+
+		coment = coment.from(comentarioDto);
+
+		coment = comentarioRepository.save(coment);
+
+		return coment;
+	}
+	@Override
+	public Mensaje guardar(MensajeDto Datos) {
+		Mensaje coment = Mensaje.from(Datos);
+		return comentarioRepository.save(coment);
+	}
+
+	@Override
+	public Mensaje consultar(String id) {
+		return comentarioRepository.findById(id)
+				.orElseThrow(() -> PublicacionNoEncontradaException.from("No se encontro el comentario", id));
+	}
+
+	@Override
+	public List<Mensaje> comentariosPublicacion(String id) {
+		return (List<Mensaje>) comentarioRepository.findByPublicacion(id);
+	}
+
+	@Override
+	public void remover(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	
+
+
+		
+
+
+	
+
+}

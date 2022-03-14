@@ -1,0 +1,31 @@
+package com.examen.publicaciones.controllers;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.examen.publicaciones.entity.Publicaciones;
+import com.examen.publicaciones.models.PublicacionesDto;
+import com.examen.publicaciones.models.TemplateResponse;
+import com.examen.publicaciones.service.ServicePublicacionesImpl;
+
+
+
+@RestController
+@RequestMapping("publicacion/v1")
+public class publicacionControllers {
+	private ServicePublicacionesImpl servicePublicacionesImpl;
+	
+	@PostMapping("/")
+	public TemplateResponse crear(@RequestBody PublicacionesDto publicacionesDto) {
+		
+		Publicaciones publicacion = servicePublicacionesImpl.guardar(publicacionesDto);
+		TemplateResponse response = new TemplateResponse("La publicacion se ha creado exitosamente", "200", publicacion);
+		return response;
+	}
+	
+	
+	
+
+}

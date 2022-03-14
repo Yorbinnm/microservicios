@@ -1,0 +1,10 @@
+package com.examen.usuarios.models.service;
+
+import com.examen.usuarios.entity.Usuario;
+
+public interface UsuarioService {
+	Usuario guardar(Usuario Datos);
+	Usuario consultar(String usuario_id);
+	Usuario eliminar(String usuario_id);
+	List<Clientes> obtenerTodo();
+}

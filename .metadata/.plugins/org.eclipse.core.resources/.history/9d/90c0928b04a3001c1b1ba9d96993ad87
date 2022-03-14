@@ -1,0 +1,5 @@
+package com.examen.publicaciones.repository;
+
+public interface PublicacionesRepository extends JpaRepository<Seguros, String> {
+	Optional<Seguros> findById(String id);
+}

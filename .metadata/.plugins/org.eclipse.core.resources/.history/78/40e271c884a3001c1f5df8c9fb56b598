@@ -1,0 +1,17 @@
+package com.examen.noticias.service;
+
+import java.util.List;
+
+import com.examen.noticias.entity.Noticias;
+import com.examen.noticias.models.PublicacionesDto;
+
+
+
+public interface ServicePublicaciones {
+	Noticias guardar(PublicacionesDto Datos);
+	Noticias consultar(String id);
+	List<Noticias> publicaciones_usuario(String id);
+	void remover(String id);
+	
+
+}

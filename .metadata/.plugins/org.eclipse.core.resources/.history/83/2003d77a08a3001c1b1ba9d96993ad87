@@ -1,0 +1,40 @@
+package com.examen.publicaciones.service;
+
+import java.util.List;
+
+import com.examen.publicaciones.entity.Publicaciones;
+import com.examen.publicaciones.models.PublicacionesDto;
+
+public class ServicePublicacionesImpl implements ServicePublicaciones {
+
+	@Override
+	public Publicaciones guardar(PublicacionesDto Datos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Publicaciones consultar(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Publicaciones eliminar(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Publicaciones> obtenerTodo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Publicaciones modificar(String id, PublicacionesDto publicacionDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

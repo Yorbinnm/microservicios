@@ -1,0 +1,5 @@
+package com.examen.comentarios.entity;
+
+public class Comentario {
+
+}

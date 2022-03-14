@@ -1,0 +1,31 @@
+package com.examen.comentarios.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.examen.comentarios.entity.Comentario;
+import com.examen.comentarios.models.ComentarioDto;
+import com.examen.comentarios.models.TemplateResponse;
+import com.examen.comentarios.service.ServiceComentariosImpl;
+
+
+
+
+@RestController
+@RequestMapping("comentarios/v1")
+public class ComentarioController {
+	@Autowired
+	private ServiceComentariosImpl serviceComentariosnesImpl;
+	
+	@PostMapping("/")
+	public TemplateResponse crear(@RequestBody ComentarioDto comentarioDto) {
+		Comentario publicacion = serviceComentariosnesImpl.guardar(comentarioDto);
+		TemplateResponse response = new TemplateResponse("El comentario se ha creado exitosamente", "200", publicacion);
+		return response;
+			
+	}
+
+}

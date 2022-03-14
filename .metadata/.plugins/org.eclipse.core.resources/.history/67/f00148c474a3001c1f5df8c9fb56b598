@@ -1,0 +1,30 @@
+package com.examen.mensajes.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+
+
+
+@Entity
+@Table(name = "comentarios")
+public class Mensaje implements  Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(generator = "uuid2")
+	@GenericGenerator(name = "uuid2", strategy = "uuid2")
+	@Column(updatable = false)
+	private String mensaje_id;
+	private String usuario_id_emisor;
+	private String publicacion_id_receptor;
+	private String mensaje;
+
+	
+}

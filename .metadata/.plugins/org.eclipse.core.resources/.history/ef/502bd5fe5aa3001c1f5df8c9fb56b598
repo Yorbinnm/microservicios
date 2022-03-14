@@ -1,0 +1,64 @@
+package com.examen.comentarios.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.comentarios.entity.Comentario;
+import com.examen.comentarios.models.ComentarioDto;
+import com.examen.comentarios.repository.ComentarioRepository;
+
+
+
+
+@Service
+@Transactional
+public class ServiceComentariosImpl implements ServiceComentario {
+	
+
+	private ComentarioRepository comentarioRepository;
+	public ServiceComentariosImpl(ComentarioRepository comentarioRepository) {
+		this.comentarioRepository = comentarioRepository;
+	}
+	@Override
+	public Comentario guardar(ComentarioDto Datos) {
+		Publicaciones Publicacion = Comentario.from(Datos);
+		return publicacionrepos.save(Publicacion);
+	}
+
+	@Override
+	public Publicaciones consultar(String id) {
+		return publicacionrepos.findById(id)
+				.orElseThrow(() -> PublicacionNoEncontradaException.from("No se encontro la publicacion", id));
+	}
+	@Override
+	public void remover(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public List<Publicaciones> publicaciones_usuario(String id) {
+		return (List<Publicaciones>) publicacionrepos.findByUsuario(id);
+				
+	}
+	@Override
+	public Comentario guardar(ComentarioDto Datos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Comentario consultar(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+
+		
+
+
+	
+
+}

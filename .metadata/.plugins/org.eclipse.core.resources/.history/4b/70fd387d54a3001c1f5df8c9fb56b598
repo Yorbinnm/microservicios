@@ -1,0 +1,5 @@
+package com.examen.comentarios.controllers;
+
+public class ComentarioController {
+
+}

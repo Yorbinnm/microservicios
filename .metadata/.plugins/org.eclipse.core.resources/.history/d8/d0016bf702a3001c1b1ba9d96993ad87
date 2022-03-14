@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: admin
+    url:  jdbc:postgresql://database-service:5432/publicaciones
+  application:
+    name: publicaciones
+  boot:
+      admin:
+         url: http://monitoring-server:8086/
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true #registra ip no hostname
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    metadata-map:
+      instanceId: ${instance.id}
+ 
+server:
+  port: 8082

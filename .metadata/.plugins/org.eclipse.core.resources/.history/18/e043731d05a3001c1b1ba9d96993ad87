@@ -1,0 +1,8 @@
+package com.examen.publicaciones.models;
+
+public class PublicacionesDto {
+	private String publicacion_id;
+	private String usuario_id;
+	private String mensaje;
+
+}

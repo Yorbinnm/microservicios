@@ -1,0 +1,9 @@
+package com.examen.usuarios.models.remote;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public interface ServicePublicacionRemote {
+    @RequestMapping(method = POST, value = "/publicacion/usuario/{id}", produces = "application/json")
+    Response<List<Publicacion>> getPublicaciones(@PathVariable int id);
+}

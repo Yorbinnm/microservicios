@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "c168d994-5083-4267-9a57-49a5a2e2db96",
+		"name": "Comentarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "comentar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"usuario_id\": \"4e8d8789-0942-4b36-b67d-65b1a45098aa\",\n        \"mensaje\": \"mensaje de 11\",\n        \"publicacion_id\":\"7e7e7976-6db4-4700-abdd-73e9b5546385\"\n }\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/comentarios/v1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"comentarios",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editarcomentario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"usuario_id\": \"4e8d8789-0942-4b36-b67d-65b1a45098aa\",\n        \"mensaje\": \"mensaje de 90\",\n        \"publicacion_id\":\"7e7e7976-6db4-4700-abdd-73e9b5546385\"\n }\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/comentarios/v1/9f43e3ce-8a27-4ccd-8f47-0f4d6ca7eb9e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"comentarios",
+						"v1",
+						"9f43e3ce-8a27-4ccd-8f47-0f4d6ca7eb9e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComentariosByPublicacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/comentarios/v1/publicacion/e6f9dedd-1c52-4293-95b4-1d9ee89de108",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"comentarios",
+						"v1",
+						"publicacion",
+						"e6f9dedd-1c52-4293-95b4-1d9ee89de108"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComentarioById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/comentarios/v1/9f43e3ce-8a27-4ccd-8f47-0f4d6ca7eb9e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"comentarios",
+						"v1",
+						"9f43e3ce-8a27-4ccd-8f47-0f4d6ca7eb9e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

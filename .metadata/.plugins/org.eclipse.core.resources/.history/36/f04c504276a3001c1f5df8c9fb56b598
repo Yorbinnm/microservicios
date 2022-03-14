@@ -1,0 +1,16 @@
+
+package com.examen.mensajes.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.examen.comentarios.entity.Comentario;
+
+@Repository
+public interface MensajeRepository extends JpaRepository<Mensaje, String> {
+	@Query("select c from Comentario c where c.publicacion_id like %?1%")
+    List<Mensaje> findByPublicacion(String usuario_id);	
+}

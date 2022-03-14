@@ -1,0 +1,5 @@
+package com.examen.publicaciones.service;
+
+public interface ServicePublicaciones {
+
+}

@@ -1,0 +1,30 @@
+package com.examen.comentarios.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.comentarios.entity.Comentario;
+import com.examen.comentarios.models.ComentarioDto;
+
+
+
+
+
+@Service
+@Transactional
+public class ServiceComentariosImpl implements ServiceComentario {
+	
+
+	private ComentarioRepository comentarioRepository;
+	
+
+
+		
+
+
+	
+
+}

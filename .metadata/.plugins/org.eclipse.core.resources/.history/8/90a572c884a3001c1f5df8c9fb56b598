@@ -1,0 +1,52 @@
+package com.examen.noticias.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.noticias.entity.Noticias;
+import com.examen.noticias.models.PublicacionesDto;
+import com.examen.noticias.repository.PublicacionesRepository;
+
+
+@Service
+@Transactional
+public class ServicePublicacionesImpl implements ServicePublicaciones {
+	
+
+	private PublicacionesRepository publicacionrepos;
+	public ServicePublicacionesImpl(PublicacionesRepository publicacionrepos) {
+		this.publicacionrepos = publicacionrepos;
+	}
+	@Override
+	public Noticias guardar(PublicacionesDto Datos) {
+		Noticias Publicacion = Noticias.from(Datos);
+		return publicacionrepos.save(Publicacion);
+	}
+
+	@Override
+	public Noticias consultar(String id) {
+		return publicacionrepos.findById(id)
+				.orElseThrow(() -> PublicacionNoEncontradaException.from("No se encontro la publicacion", id));
+	}
+	@Override
+	public void remover(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public List<Noticias> publicaciones_usuario(String id) {
+		return (List<Noticias>) publicacionrepos.findByUsuario(id);
+				
+	}
+	
+
+
+		
+
+
+	
+
+}

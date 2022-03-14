@@ -1,0 +1,8 @@
+package com.examen.usuarios.models;
+
+public class UsuarioDto {
+	private String usuario_id;
+	private String nombre;
+	private String primer_apellido;
+	private String segundo_apellido;
+}

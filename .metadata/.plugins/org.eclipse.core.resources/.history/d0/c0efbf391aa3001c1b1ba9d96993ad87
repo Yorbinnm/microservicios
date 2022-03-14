@@ -1,0 +1,9 @@
+package com.examen.publicaciones.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.examen.publicaciones.entity.Publicaciones;
+
+public interface PublicacionesRepository extends JpaRepository<Publicaciones, String> {
+	
+}

@@ -1,0 +1,24 @@
+package com.examen.usuarios.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.examen.usuarios.entity.Usuario;
+import com.examen.usuarios.models.service.UsuarioServiceImpl;
+
+@RestController
+public class UsuariosController {
+	@Autowired
+	private UsuarioServiceImpl usuarioImpl;
+	
+    @GetMapping("/listar")
+	public List<Usuario> listaUsuarios() {
+		return usuarioImpl.obtenerTodo();
+	}
+
+
+}

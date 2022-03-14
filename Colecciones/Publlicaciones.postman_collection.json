@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "50b521dc-ad60-4ca9-ac28-8a5e6b7cdbe7",
+		"name": "Publlicaciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"usuario_id\": \"3faaa23b-f7c6-4fb0-958c-d4c552a3b557\",\n        \"mensaje\": \"mensaje de prueba\"\n }\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/publicacion/v1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"publicacion",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PublicacionByid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/publicacion/v1/e252c777-46a5-4357-839a-ce4b9bac9e75",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"publicacion",
+						"v1",
+						"e252c777-46a5-4357-839a-ce4b9bac9e75"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PublicacionByUsuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/publicacion/v1/3faaa23b-f7c6-4fb0-958c-d4c552a3b557",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"publicacion",
+						"v1",
+						"3faaa23b-f7c6-4fb0-958c-d4c552a3b557"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

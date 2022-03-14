@@ -1,0 +1,31 @@
+package com.examen.usuarios.models.service;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.usuarios.entity.Usuario;
+@Service
+public class UsuarioServiceImpl implements UsuarioService{
+
+	@Override
+	public Usuario guardar(Usuario Datos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario consultar(String usuario_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario eliminar(String usuario_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
+	
+
+}

@@ -1,0 +1,20 @@
+package com.examen.mensajes.service;
+
+import java.util.List;
+
+import com.examen.comentarios.entity.Comentario;
+import com.examen.comentarios.models.ComentarioDto;
+
+
+
+
+
+public interface ServiceComentario {
+	Mensaje guardar(MensajeDto Datos);
+	Mensaje consultar(String id);
+	List<Mensaje> comentariosPublicacion(String id);
+	Mensaje modificar(String id, MensajeDto comentarioDto);
+	void remover(String id);
+	
+
+}

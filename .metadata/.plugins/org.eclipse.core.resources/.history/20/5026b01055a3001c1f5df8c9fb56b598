@@ -1,0 +1,24 @@
+package com.examen.comentarios.controllers;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("comentario/v1")
+public class ComentarioController {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(generator = "uuid2")
+	@GenericGenerator(name = "uuid2", strategy = "uuid2")
+	@Column(updatable = false)
+	private String comentario_id;
+	private String usuario_id;
+	private String publicacion_id;
+	private String mensaje;
+	
+}

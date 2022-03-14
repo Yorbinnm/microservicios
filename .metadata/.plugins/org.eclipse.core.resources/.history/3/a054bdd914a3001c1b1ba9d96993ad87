@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: admin
+    url:  jdbc:postgresql://database-service:5432/publicaciones
+  application:
+    name: publicaciones
+
+server:
+  port: 8082

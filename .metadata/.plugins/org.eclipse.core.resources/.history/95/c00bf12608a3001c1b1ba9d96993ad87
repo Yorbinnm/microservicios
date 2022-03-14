@@ -1,0 +1,12 @@
+package com.examen.publicaciones.service;
+
+import java.util.List;
+
+
+public interface ServicePublicaciones {
+	Publicaciones guardar(UsuarioDto Datos);
+	Publicaciones consultar(String id);
+	Publicaciones eliminar(String id);
+	List<Publicaciones> obtenerTodo();
+	Publicaciones modificar(String id, UsuarioDto usuarioDto)
+}

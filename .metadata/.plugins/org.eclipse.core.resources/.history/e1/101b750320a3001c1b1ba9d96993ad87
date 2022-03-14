@@ -1,0 +1,49 @@
+package com.examen.publicaciones.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.publicaciones.entity.Publicaciones;
+import com.examen.publicaciones.models.PublicacionesDto;
+import com.examen.publicaciones.repository.PublicacionesRepository;
+import com.examen.usuarios.models.service.UsuarioNoEncontradoException;
+
+@Service
+@Transactional
+public class ServicePublicacionesImpl implements ServicePublicaciones {
+	
+	private PublicacionesRepository publicacionrepos;
+	public ServicePublicacionesImpl(PublicacionesRepository publicacionrepos) {
+		this.publicacionrepos = publicacionrepos;
+	}
+	@Override
+	public Publicaciones guardar(PublicacionesDto Datos) {
+		Publicaciones Publicacion = Publicaciones.from(Datos);
+		return publicacionrepos.save(Publicacion);
+	}
+
+	@Override
+	public Publicaciones consultar(String id) {
+		return publicacionrepos.findById(id)
+				.orElseThrow(() -> PublicacionNoEncontradaException.from("No se encontro el client", id));
+	}
+	
+	@Override
+	public void remover(String id) {
+		publicacionrepos.findById(id)
+		.orElseThrow(() -> PublicacionNoEncontradaException.from("No se encontro el cliente", id));
+		publicacionrepos.delete(id);
+	}
+		
+	}
+
+
+		
+
+
+	
+
+}

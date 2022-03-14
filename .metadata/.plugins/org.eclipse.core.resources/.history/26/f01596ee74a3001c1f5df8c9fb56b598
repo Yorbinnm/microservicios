@@ -1,0 +1,12 @@
+package com.examen.mensajes.models;
+
+public class MensajeDto {
+	private String mensaje_id;
+	private String usuario_id_emisor;
+	private String publicacion_id_receptor;
+	private String mensaje;
+	
+	
+	
+	
+}

@@ -1,0 +1,17 @@
+package com.examen.comentarios.service;
+
+import java.util.List;
+
+import com.examen.comentarios.models.ComentarioDto;
+
+
+
+
+public interface ServiceComentario {
+	Comentarios guardar(ComentarioDto Datos);
+	Comentarios consultar(String id);
+	List<Comentarios> publicaciones_usuario(String id);
+	void remover(String id);
+	
+
+}

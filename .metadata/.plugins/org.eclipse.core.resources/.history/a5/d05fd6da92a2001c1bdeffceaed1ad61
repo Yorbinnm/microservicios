@@ -1,0 +1,39 @@
+package com.examen.usuarios.models.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.examen.usuarios.entity.Usuario;
+import com.examen.usuarios.models.repository.UsuarioRepository;
+@Service
+public class UsuarioServiceImpl implements UsuarioService{
+	private UsuarioRepository usuarioRepo;
+	@Override
+	public Usuario guardar(Usuario Datos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario consultar(String usuario_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario eliminar(String usuario_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Usuario> obtenerTodo() {
+		return usuariosRepository.findAll();
+	}
+
+
+	
+	
+
+}
